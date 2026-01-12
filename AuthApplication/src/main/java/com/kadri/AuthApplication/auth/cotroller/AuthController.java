@@ -2,6 +2,7 @@ package com.kadri.AuthApplication.auth.cotroller;
 
 import com.kadri.AuthApplication.auth.model.AuthRequest;
 import com.kadri.AuthApplication.auth.model.AuthResponse;
+import com.kadri.AuthApplication.auth.model.ChallengeResponse;
 import com.kadri.AuthApplication.auth.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,5 +23,10 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request){
         return ResponseEntity.ok(authService.login(request));
+    }
+
+    @PostMapping("/challenge")
+    public ResponseEntity<AuthResponse> respondToChallenge(@RequestBody ChallengeResponse challengeResponse){
+        return ResponseEntity.ok(authService.respondToChallenge(challengeResponse));
     }
 }

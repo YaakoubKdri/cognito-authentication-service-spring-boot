@@ -3,6 +3,7 @@ package com.kadri.AuthApplication.auth.service;
 import com.kadri.AuthApplication.auth.idp.IdentityProvider;
 import com.kadri.AuthApplication.auth.model.AuthRequest;
 import com.kadri.AuthApplication.auth.model.AuthResponse;
+import com.kadri.AuthApplication.auth.model.ChallengeResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,5 +16,9 @@ public class AuthService {
 
     public AuthResponse login(AuthRequest request){
         return identityProvider.initiateAuth(request);
+    }
+
+    public AuthResponse respondToChallenge(ChallengeResponse challengeResponse) {
+        return identityProvider.respondToChallenge(challengeResponse);
     }
 }
