@@ -21,4 +21,8 @@ public class AuthService {
     public AuthResponse respondToChallenge(ChallengeResponse challengeResponse) {
         return identityProvider.respondToChallenge(challengeResponse);
     }
+
+    public AuthResponse refresh() {
+        return identityProvider.refresh();
+    }
 }

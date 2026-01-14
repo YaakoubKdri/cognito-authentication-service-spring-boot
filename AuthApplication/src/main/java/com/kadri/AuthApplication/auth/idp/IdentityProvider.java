@@ -8,4 +8,6 @@ public interface IdentityProvider {
     AuthResponse initiateAuth(AuthRequest request);
 
     AuthResponse respondToChallenge(ChallengeResponse challengeResponse);
+
+    AuthResponse refresh();
 }

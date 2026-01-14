@@ -29,4 +29,8 @@ public class AuthController {
     public ResponseEntity<AuthResponse> respondToChallenge(@RequestBody ChallengeResponse challengeResponse){
         return ResponseEntity.ok(authService.respondToChallenge(challengeResponse));
     }
+    @PostMapping("/refresh")
+    public ResponseEntity<AuthResponse> refresh(){
+        return ResponseEntity.ok(authService.refresh());
+    }
 }
