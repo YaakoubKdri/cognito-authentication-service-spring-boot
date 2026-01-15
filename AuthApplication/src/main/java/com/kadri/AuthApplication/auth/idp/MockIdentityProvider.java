@@ -21,4 +21,9 @@ public class MockIdentityProvider implements IdentityProvider{
     public AuthResponse refresh() {
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    @Override
+    public void logout() {
+
+    }
 }

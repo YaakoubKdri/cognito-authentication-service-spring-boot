@@ -25,4 +25,8 @@ public class AuthService {
     public AuthResponse refresh() {
         return identityProvider.refresh();
     }
+
+    public void logout() {
+        identityProvider.logout();
+    }
 }

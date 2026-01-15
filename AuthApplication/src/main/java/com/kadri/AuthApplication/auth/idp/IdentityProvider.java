@@ -10,4 +10,6 @@ public interface IdentityProvider {
     AuthResponse respondToChallenge(ChallengeResponse challengeResponse);
 
     AuthResponse refresh();
+
+    void logout();
 }
